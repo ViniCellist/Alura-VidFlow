@@ -1,6 +1,6 @@
-/* CABEÇALHO */
+/* HEADER / NAV */
 
-.cabecalho__container {
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,11 +8,7 @@
     top: 0;
   }
   
-  .cabecalho__pesquisar__item {
-    display: none;
-  }
-  
-  .form__pesquisa {
+  .form-search {
     position: relative;
     flex: 1;
     display: flex;
@@ -21,14 +17,45 @@
   
   /* SECAO SUPERIOR */
   
-  .superior__slider {
+  .section-slider {
     display: none;
   }
   
+  /* MENU */
+
+  .aside-container {
+    position: fixed;
+    bottom: 0%;
+    height: 74px;
+    width: 100%;
+  }
+
+  .menu-list {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+  }
+
+  .menu-list li {
+    align-self: center;
+  }
+
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .menu-list:nth-child(2),
+  .menu-list:nth-child(3),
+  .menu-list:nth-child(4) {
+    display: none;
+  }
+
   
   /* SEÇÃO SUPERIOR */
   
-  .superior__secao__container {
+  .section-container {
     display: flex;
     align-items: center;
     white-space: nowrap;
@@ -66,26 +93,90 @@
     grid-area: 1 / 1 / 3 / 2;
   } 
   
-  
+  @media (min-width: 834px) {
+    /* MENU LATERAL */
+
+    .aside-container {
+      left: 0;
+      height: auto;
+      width: 74px;
+      top: 80px;
+    }
+
+    .menu-list {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 15px;
+      gap: 33px;
+    }
+  }
+
+
   @media (min-width: 1156px) {
     /* CABEÇALHO */
   
-    .cabecalho__pesquisar__item {
+    .search-item {
       display: block;
       transform: translate(-60px);
     }
   
-    .pesquisar__input {
+    .search-input {
       width: 530px;
     }
   
     /* SECAO SUPERIOR */
   
-    .superior__slider {
+    .section-slider {
       display: flex;
       justify-content: center;
       align-items: center;
     }
   }
   
+  @media (min-width: 1440px) {
+    /* MENU */
+
+    .aside-container {
+      width: 239px;
+      overflow: scroll;
+    }
+
+    .menu-list:nth-child(2),
+    .menu-list:nth-child(3),
+    .menu-list:nth-child(4) {
+      display: flex;
+    }
+
+    .menu-list {
+      height: auto;
+      padding: 20px 17px 20px 15px;
+      gap: 15px;
+    }
+
+    .menu-item {
+      flex-direction: row;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .menu-list:nth-child(3) {
+      flex-direction: column-reverse;
+    }
+
+    .games {
+      order: 3;
+    }
+
+    .movies {
+      order: 2;
+    }
+
+    .premium {
+      order: 1;
+    }
+
+    .morepage {
+      order: 4;
+    }
+  }
   
