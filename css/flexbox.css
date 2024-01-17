@@ -76,7 +76,7 @@
     display: block;
     height: 303px;
     width: 280px;
-    flex-grow: 1;
+    flex-grow: 0;
   }
   
   
