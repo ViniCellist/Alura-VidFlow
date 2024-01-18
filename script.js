@@ -17,6 +17,7 @@ async function searchAndShow(){
                         <img class="img-canal" src="${video.imagem}" alt="Logo do Canal">
                         <h3 class="titulo-video">${video.titulo}</h3>
                         <p class="titulo-canal">${video.descricao}</p>
+                        <p class="categoria" hidden>${video.categoria}</p>
                     </div>
                 </li>
                 `;
@@ -27,3 +28,38 @@ async function searchAndShow(){
 }
 
 searchAndShow()
+
+const searchBar = document.querySelector('.search-input')
+
+searchBar.addEventListener('input', filterSearch)
+
+function filterSearch() {
+    const videos = document.querySelectorAll('.videos-item')
+    const filterValue = searchBar.value.toLowerCase()
+
+    videos.forEach((video) => {
+        const titulo = video.querySelector('.titulo-video').textContent.toLowerCase()
+        video.style.display = filterValue ? titulo.includes(filterValue) ? 'block' : 'none' : 'block'
+    })
+}
+
+const btnCategory = document.querySelectorAll('.section-item')
+
+btnCategory.forEach((botao) => {
+    let nameCategory = botao.getAttribute("name")
+    botao.addEventListener("click", () => filterCategory(nameCategory))
+})
+
+function filterCategory(filtro) {
+    const videos = document.querySelectorAll('.videos-item')
+    for(let video of videos){
+        let categoria = video.querySelector('.categoria').textContent.toLowerCase()
+        let filterValue = filtro.toLowerCase()
+
+        if(!categoria.includes(filterValue) && filterValue !='tudo') {
+            video.style.display = "none"
+        } else {
+            video.style.display = "block"
+        }
+    }
+}
