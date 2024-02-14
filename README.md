@@ -58,5 +58,5 @@ Interface:
 
 ## Author
 
-- LinkedIn - [Vinicius Duarte](https://www.linkedin.com/analytics/post-summary/urn:li:activity:7143273780763688960/)
+- LinkedIn - [Vinicius Duarte](https://www.linkedin.com/in/viniciussouzaduarte/)
 - Intagram - [@vinicius_duartesd](https://www.instagram.com/vinicius_duartesd/)
